@@ -1,0 +1,179 @@
+
+
+<div class="kontaktelWidget">
+    <div class="kontaktelWidget-heading">
+        Kontaktbuch
+    </div>
+
+    <div class="kontaktelWidget-search">
+        <span class="kontaktelWidget-search-icon" aria-hidden="true">⌕</span>
+
+        <input
+            class="kontaktelWidget-search-input"
+            type="search"
+            placeholder="Kontakt suchen ..."
+            aria-label="Kontakt suchen"
+        >
+    </div>
+
+    <div class="kontaktelWidget-contacts">
+
+        <a
+            class="kontaktelWidget-contact"
+            href="mailto:max.mustermann@bgv.de"
+            data-search="max.mustermann@bgv.de"
+        >
+            <span class="kontaktelWidget-contact-avatar">
+                MM
+            </span>
+
+            <span class="kontaktelWidget-contact-content">
+                <span class="kontaktelWidget-contact-name">
+                    Max Mustermann
+                </span>
+
+                <span class="kontaktelWidget-contact-info">
+                    IT-Entwicklung · 1234
+                </span>
+            </span>
+
+            <span class="kontaktelWidget-contact-icon" aria-hidden="true">
+                ✉
+            </span>
+        </a>
+
+        <a
+            class="kontaktelWidget-contact"
+            href="mailto:erika.musterfrau@bgv.de"
+            data-search="erika.musterfrau@bgv.de"
+        >
+            <span class="kontaktelWidget-contact-avatar">
+                EM
+            </span>
+
+            <span class="kontaktelWidget-contact-content">
+                <span class="kontaktelWidget-contact-name">
+                    Erika Musterfrau
+                </span>
+
+                <span class="kontaktelWidget-contact-info">
+                    Personal · 2345
+                </span>
+            </span>
+
+            <span class="kontaktelWidget-contact-icon" aria-hidden="true">
+                ✉
+            </span>
+        </a>
+
+        <a
+            class="kontaktelWidget-contact"
+            href="mailto:it.kommunikation@bgv.de"
+            data-search="it.kommunikation@bgv.de"
+        >
+            <span class="kontaktelWidget-contact-avatar">
+                IT
+            </span>
+
+            <span class="kontaktelWidget-contact-content">
+                <span class="kontaktelWidget-contact-name">
+                    IT-Kommunikation
+                </span>
+
+                <span class="kontaktelWidget-contact-info">
+                    IT-Support
+                </span>
+            </span>
+
+            <span class="kontaktelWidget-contact-icon" aria-hidden="true">
+                ✉
+            </span>
+        </a>
+
+    </div>
+
+    <div
+        class="kontaktelWidget-no-results"
+        hidden
+    >
+        Keine Kontakte gefunden.
+    </div>
+</div>
+
+
+<script>
+(function () {
+    function initKontaktbuch() {
+        const kontaktelWidgets = document.querySelectorAll(".kontaktelWidget");
+
+        kontaktelWidgets.forEach(function (kontaktelWidget) {
+            if (kontaktelWidget.dataset.searchInitialized === "true") {
+                return;
+            }
+
+            const searchInput = kontaktelWidget.querySelector(
+                ".kontaktelWidget-search-input"
+            );
+
+            const contacts = kontaktelWidget.querySelectorAll(
+                ".kontaktelWidget-contact"
+            );
+
+            const noResults = kontaktelWidget.querySelector(
+                ".kontaktelWidget-no-results"
+            );
+
+            if (!searchInput || !contacts.length) {
+                return;
+            }
+
+            kontaktelWidget.dataset.searchInitialized = "true";
+
+            searchInput.addEventListener("input", function () {
+                const searchTerm = searchInput.value
+                    .trim()
+                    .toLocaleLowerCase("de-DE");
+
+                let visibleContacts = 0;
+
+                contacts.forEach(function (contact) {
+                    const visibleText = contact.textContent || "";
+                    const searchableText = contact.getAttribute(
+                        "data-search"
+                    ) || "";
+
+                    const contactText = (
+                        visibleText + " " + searchableText
+                    )
+                        .toLocaleLowerCase("de-DE");
+
+                    const isMatch = contactText.includes(searchTerm);
+
+                    contact.hidden = !isMatch;
+
+                    if (isMatch) {
+                        visibleContacts++;
+                    }
+                });
+
+                if (noResults) {
+                    noResults.hidden = visibleContacts !== 0;
+                }
+            });
+        });
+    }
+
+    /*
+    * Funktioniert sowohl bei normalem Seitenladen
+    * als auch bei nachträglich eingefügten Widgets.
+    */
+    if (document.readyState === "loading") {
+        document.addEventListener(
+            "DOMContentLoaded",
+            initKontaktbuch
+        );
+    } else {
+        initKontaktbuch();
+    }
+})();
+</script>

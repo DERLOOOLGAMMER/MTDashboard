@@ -4,27 +4,31 @@
   </div>
 
   <div class="profilsWidget-name">
-    Tyler Bork
+    {{ dashboardData.profile().name }}
   </div>
 
   <div class="profilsWidget-data">
     <div class="profilsWidget-data-row">
-      <span class="profilsWidget-label">Telefon</span>
+      <span class="profilsWidget-label">
+        Telefon
+      </span>
 
       <a
         class="profilsWidget-value"
-        href="tel:+4915758804495">
-        +49 1575 8804495
+        [href]="'tel:' + dashboardData.profile().phone">
+        {{ dashboardData.profile().phone }}
       </a>
     </div>
 
     <div class="profilsWidget-data-row">
-      <span class="profilsWidget-label">E-Mail</span>
+      <span class="profilsWidget-label">
+        E-Mail
+      </span>
 
       <a
         class="profilsWidget-value"
-        href="mailto:Tyler.Bork@bgv.com">
-        Tyler.Bork@bgv.com
+        [href]="'mailto:' + dashboardData.profile().email">
+        {{ dashboardData.profile().email }}
       </a>
     </div>
   </div>

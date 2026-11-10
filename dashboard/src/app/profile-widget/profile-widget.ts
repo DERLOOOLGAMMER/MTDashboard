@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { DashboardData } from '../services/dashboard-data';
 
 @Component({
-  imports: [],
   selector: 'app-profile-widget',
-  styleUrl: './profile-widget.css',
   templateUrl: './profile-widget.html',
+  styleUrl: './profile-widget.css',
 })
-export class ProfileWidget {}
+export class ProfileWidget {
+  dashboardData = inject(DashboardData);
+}

@@ -1,7 +1,12 @@
 <div class="widget-outer-container">
   @if (widgets.profile) {
-    <app-profile-widget class="widget-normal"></app-profile-widget>
+    <app-profile-widget class="widget-small"></app-profile-widget>
   }
-
+  @if (widgets.schnellzugriff) {
+    <app-schnellzugriff-widget class="widget-normal"></app-schnellzugriff-widget>
+  }
+  @if (widgets.kontakte) {
+    <app-kontakte-widget class="widget-large"></app-kontakte-widget>
+  }
 
 </div>
