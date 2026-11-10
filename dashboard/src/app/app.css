@@ -1,0 +1,15 @@
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 0px 1fr;
+  min-height: calc(100vh - 130px);
+}
+
+app-leftbar {
+    margin-top: 5vh;
+    margin-left: 1vw;
+    display: block;
+}
+
+.dashboard-content {
+  min-width: 0;
+}

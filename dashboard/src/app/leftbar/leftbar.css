@@ -1,0 +1,33 @@
+.leftbarContainer {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(12, minmax(0, 1fr));
+    gap: 0.5vh;
+
+    width: 10vw;
+    height: 80vh;
+    padding: 1rem;
+
+    box-sizing: border-box;
+    overflow: hidden;
+
+    color: black;
+    background-color: rgba(214, 218, 250, 0.5);
+    border-radius: 30px;
+}
+
+.leftbarContainer button {
+    width: 100%;
+    min-height: 20px;
+    max-height: 5vh;
+
+    padding: 0.5rem;
+    border: 0;
+    border-radius: 15px;
+
+    color: white;
+    background-color: rgb(38, 54, 123);
+    cursor: pointer;
+}

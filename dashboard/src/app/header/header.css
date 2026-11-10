@@ -1,0 +1,64 @@
+header {
+    position: relative;
+    margin-top: 0;
+    width: 100%;
+    background-color: rgba(214, 218, 250, 0.5);
+    min-height: 8vh;
+    max-height: 130px;
+}
+
+header img {
+    display: block;
+    height: 6vh;
+    max-height: 120px;
+    padding-top: 1vh;
+    padding-left: 1vw;
+}
+
+header h1 {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: left;
+    padding-left: 7vw;
+    align-items: center;
+
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    font-style: normal;
+    font-size: 2rem;
+    color: rgb(38, 54, 123);
+    margin: 0;
+}
+
+
+header button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: clamp(80px, 8vw, 140px);
+    min-height: 50px;
+    max-height: 100px;
+
+    padding: 0.5rem 1rem;
+    border: 0;
+    border-radius: 20px;
+
+    font-size: 1rem;
+    font-weight: 10px;
+    font-style: normal;
+
+    background-color: rgb(38, 54, 123);
+    color: white;
+    cursor: pointer;
+}
+
+header button.button-left {
+    right: 11rem;
+}
+
+header button.button-right {
+    right: 1rem;
+}
