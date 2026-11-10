@@ -1,6 +1,23 @@
-<header> 
+<header>
     <img src="/logoB.png" alt="Dashboard Logo">
-    <h1>Guten Morgen, Tyler!</h1>
-    <button class="button-left">Profil</button>
-    <button class="button-right">Abmelden</button>
+
+    <h1 class="h1">
+        Guten Morgen, {{ name }}!
+    </h1>
+
+    <h1 class="h2">
+        {{ currentTime() | date: 'HH:mm' }} Uhr
+    </h1>
+
+    <div class="weather">
+        @if (weatherError()) {
+            <span>{{ weatherError() }}</span>
+        } @else {
+            <span>{{ weatherText() }}</span>
+
+            @if (temperature() !== null) {
+            <span>{{ temperature() }} °C</span>
+            }
+        }
+    </div>
 </header>

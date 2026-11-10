@@ -15,7 +15,7 @@ header img {
     padding-left: 1vw;
 }
 
-header h1 {
+header .h1 {
     position: absolute;
     inset: 0;
 
@@ -31,14 +31,75 @@ header h1 {
     color: rgb(38, 54, 123);
     margin: 0;
 }
+header .h2 {
+    position: absolute;
+    inset: 0;
 
+    display: flex;
+    justify-content: right;
+    right: 1rem;
+    align-items: center;
+
+
+    
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    font-style: normal;
+    font-size: 2rem;
+    color: rgb(38, 54, 123);
+    margin: 0;
+}
+
+header .h3 {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: right;
+    right: 16rem;
+    align-items: center;
+
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    font-style: normal;
+    font-size: 2rem;
+    color: rgb(38, 54, 123);
+    margin: 0;
+}
+
+.weather {
+    position: absolute;
+    top: 50%;
+    right: 3vw;
+
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    padding: 0.6rem 1rem;
+
+    transform: translate(-50%, -50%);
+
+    color: rgb(38, 54, 123);
+    
+
+    background-color: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(38, 54, 123, 0.2);
+    border-radius: 999px;
+
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    font-style: normal;
+    font-size: 2rem;
+    white-space: nowrap;
+}
 
 header button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
 
-    width: clamp(80px, 8vw, 140px);
+    width: clamp(10px, 5vw, 140px);
     min-height: 50px;
     max-height: 100px;
 
@@ -55,10 +116,6 @@ header button {
     cursor: pointer;
 }
 
-header button.button-left {
-    right: 11rem;
-}
-
 header button.button-right {
-    right: 1rem;
+    right: 12rem;
 }
