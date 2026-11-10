@@ -15,16 +15,17 @@
   box-sizing: border-box;
   overflow: hidden;
 
-  color: var(--text, #222);
+  color: #1f2937;
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0.1)
+    rgba(255, 255, 255, 0.92),
+    rgba(248, 250, 252, 0.92)
   );
 
+  border: 1px solid rgba(38, 54, 123, 0.1);
   border-radius: 4%;
   backdrop-filter: blur(6px);
-  box-shadow: 0 8px 32px rgb(23 37 54 / 8%);
+  box-shadow: 0 8px 32px rgba(23, 37, 54, 0.08);
 
   font-family: "Inter", sans-serif;
 }
@@ -32,7 +33,7 @@
 .profilsWidget-heading {
   margin-bottom: 4.5%;
 
-  color: var(--brand, #26367b);
+  color: #26367b;
   font-size: 18px;
   font-weight: 700;
 }
@@ -40,7 +41,7 @@
 .profilsWidget-name {
   margin-bottom: 4%;
 
-  color: var(--text, #222);
+  color: #111827;
   font-size: 22px;
   font-weight: 700;
   line-height: 1.2;
@@ -71,14 +72,14 @@
 .profilsWidget-label {
   min-width: 14.5%;
 
-  color: var(--text-secondary, #666);
+  color: #64748b;
   font-weight: 600;
 }
 
 .profilsWidget-value {
   min-width: 0;
 
-  color: var(--text, #222);
+  color: #1f2937;
   text-decoration: none;
 
   overflow: hidden;
@@ -87,7 +88,7 @@
 }
 
 .profilsWidget-value:hover {
-  color: var(--button-text, #26367b);
+  color: #1d4ed8;
   text-decoration: underline;
 }
 
@@ -98,6 +99,7 @@
 
   .profilsWidget-heading {
     margin-bottom: 4.375%;
+    color: #26367b;
     font-size: 16px;
   }
 

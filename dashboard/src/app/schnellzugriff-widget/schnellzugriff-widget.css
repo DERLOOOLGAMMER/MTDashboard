@@ -1,4 +1,3 @@
-
 .schnellmhWidget {
     font-family: "Inter", sans-serif;
     box-sizing: border-box;
@@ -9,26 +8,24 @@
 
     padding: 20px;
 
-    /* Variablen anstelle von festen Farbwerten eingesetzt */
-    color: var(--text);
+    color: #1f2937;
     background: linear-gradient(
         to bottom,
-        rgba(255, 255, 255, 0.1), 
-        rgba(255, 255, 255, 0.1),
-        rgba(255, 255, 255, 0.10));
+        rgba(255, 255, 255, 0.94),
+        rgba(248, 250, 252, 0.94)
+    );
+
     backdrop-filter: blur(6px);
-    border: 0px solid #dbe3ee;
+    border: 1px solid rgba(38, 54, 123, 0.1);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgb(23 37 54 /8%);
-        
+    box-shadow: 0 8px 32px rgba(23, 37, 54, 0.08);
 }
 
 .schnellmhWidget-heading {
-    /* 18px / 400px */
-    margin-bottom: 4.5%; 
+    margin-bottom: 4.5%;
 
-    color: var(--brand);
+    color: #26367b;
     font-size: 18px;
     font-weight: 700;
 }
@@ -36,9 +33,7 @@
 .schnellmhWidget-links {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    /* 12px / 400px */
-    gap: 3%; 
-    
+    gap: 3%;
 }
 
 .schnellmhWidget-link {
@@ -48,39 +43,40 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /* 8px / 400px */
-    gap: 2%; 
+    gap: 2%;
 
     min-width: 0;
-    /* 105px / 400px */
-    min-height: 26.25%; 
-    /* 14px 8px -> berechnet auf 400px */
-    padding: 3.5% 2%; 
+    min-height: 26.25%;
+    padding: 3.5% 2%;
 
-    /* Variablen für die Link-Schaltflächen */
-    color: var(--text-secondary);
-    background: var(--surface);
+    color: #475569;
+    background: #ffffff;
 
-    border: 1px solid var(--bg);
-    /* 14px / 400px */
-    border-radius: 12px; 
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
 
     text-align: center;
     text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
 }
 
 .schnellmhWidget-link:hover {
-    color: var(--button-text);
-    background: var(--brand-hover);
-    border-color: var(--brand);
+    color: #1d4ed8;
+    background: #eff3ff;
+    border-color: #26367b;
     box-shadow: 0 6px 16px rgba(37, 99, 235, 0.12);
 
     transform: translateY(-2px);
 }
 
 .schnellmhWidget-link:focus-visible {
-    /* Nutzt den Brand-Farbwert als sanften Fokus-Ring */
-    outline: 3px solid var(--brand);
+    outline: 3px solid #4f6fcf;
     outline-offset: 2px;
 }
 
@@ -95,11 +91,11 @@
 
     flex: 0 0 auto;
 
-    color: var(--brand);
-    background: var(--button);
+    color: #26367b;
+    background: #eef2ff;
 
     border-radius: 18%;
-    
+
     font-size: clamp(26px, 4vw, 38px);
     line-height: 1;
 
@@ -110,9 +106,9 @@
 }
 
 .schnellmhWidget-link:hover .schnellmhWidget-link-icon {
-    /* Invertiert die Farben beim Hover für guten Kontrast */
-    color: var(--surface);
-    background: var(--brand);
+    color: #ffffff;
+    background: #26367b;
+    transform: scale(1.04);
 }
 
 .schnellmhWidget-link-text {
@@ -137,35 +133,28 @@
 
 @media (max-width: 420px) {
     .schnellmhWidget {
-        /* 15px / 320px (Basis für Mobil-Breakpoint) */
-        padding: 4.68%; 
+        padding: 4.68%;
     }
 
     .schnellmhWidget-heading {
-        /* 14px / 320px */
-        margin-bottom: 4.375%; 
+        margin-bottom: 4.375%;
         font-size: 16px;
     }
 
     .schnellmhWidget-links {
-        /* 8px / 320px */
-        gap: 2.5%; 
+        gap: 2.5%;
     }
 
     .schnellmhWidget-link {
-        /* 92px / 320px */
-        min-height: 28.75%; 
-        /* 11px 6px -> berechnet auf 320px */
-        padding: 3.43% 1.87%; 
+        min-height: 28.75%;
+        padding: 3.43% 1.87%;
     }
 
     .schnellmhWidget-link-icon {
-        /* 36px / 320px */
-        width: 11.25%; 
-        height: 36px; 
+        width: 11.25%;
+        height: 36px;
 
-        /* 36px / 320px */
-        flex-basis: 11.25%; 
+        flex-basis: 11.25%;
 
         font-size: 19px;
     }

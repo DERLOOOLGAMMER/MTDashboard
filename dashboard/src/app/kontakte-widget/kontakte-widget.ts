@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { DashboardData } from '../services/dashboard-data';
 
 @Component({
-  imports: [],
   selector: 'app-kontakte-widget',
-  styleUrl: './kontakte-widget.css',
   templateUrl: './kontakte-widget.html',
+  styleUrl: './kontakte-widget.css',
 })
-export class KontakteWidget {}
+export class KontakteWidget {
+  readonly dashboardData = inject(DashboardData);
+}

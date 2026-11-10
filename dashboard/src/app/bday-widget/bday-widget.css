@@ -1,0 +1,169 @@
+.nextBdaylWidget {
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    padding: 20px;
+
+    color: #1f2937;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.94),
+        rgba(248, 250, 252, 0.94)
+    );
+
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(38, 54, 123, 0.1);
+    border-radius: 18px;
+
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(23, 37, 54, 0.08);
+}
+
+.nextBdaylWidget-heading {
+    margin-bottom: 16px;
+
+    color: #26367b;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.nextBdaylWidget-birthdays {
+    display: grid;
+    gap: 9px;
+}
+
+.nextBdaylWidget-birthday {
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    min-width: 0;
+    min-height: 58px;
+    padding: 8px 10px;
+
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.nextBdaylWidget-birthday:hover {
+    background: #eff3ff;
+    border-color: #26367b;
+    box-shadow: 0 5px 14px rgba(37, 99, 235, 0.1);
+
+    transform: translateY(-1px);
+}
+
+.nextBdaylWidget-birthday-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    flex: 0 0 36px;
+
+    color: #ffffff;
+    background: #26367b;
+    border-radius: 50%;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.nextBdaylWidget-birthday-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    min-width: 0;
+    flex: 1;
+}
+
+.nextBdaylWidget-birthday-name {
+    min-width: 0;
+
+    color: #111827;
+    font-size: 13px;
+    font-weight: 700;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.nextBdaylWidget-birthday-date {
+    color: #64748b;
+    font-size: 11px;
+}
+
+.nextBdaylWidget-birthday-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    flex: 0 0 30px;
+
+    color: #26367b;
+    background: #eef2ff;
+    border-radius: 9px;
+
+    font-size: 16px;
+}
+
+@media (max-width: 420px) {
+    .nextBdaylWidget {
+        padding: 15px;
+    }
+
+    .nextBdaylWidget-heading {
+        margin-bottom: 14px;
+        font-size: 16px;
+    }
+
+    .nextBdaylWidget-birthday {
+        min-height: 54px;
+        padding: 7px 8px;
+    }
+
+    .nextBdaylWidget-birthday-avatar {
+        width: 32px;
+        height: 32px;
+
+        flex-basis: 32px;
+
+        font-size: 10px;
+    }
+
+    .nextBdaylWidget-birthday-name {
+        font-size: 12px;
+    }
+
+    .nextBdaylWidget-birthday-date {
+        font-size: 10px;
+    }
+
+    .nextBdaylWidget-birthday-icon {
+        width: 27px;
+        height: 27px;
+
+        flex-basis: 27px;
+
+        font-size: 14px;
+    }
+}
