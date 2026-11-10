@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
+import { ProfileWidget } from '../profile-widget/profile-widget';
 
 @Component({
-  imports: [],
   selector: 'app-widget',
-  styleUrl: './widget.css',
+  imports: [ProfileWidget],
   templateUrl: './widget.html',
+  styleUrl: './widget.css',
 })
-export class Widget {}
+export class Widget {
+  widgets = {
+    profile: true,
+  };
+}
