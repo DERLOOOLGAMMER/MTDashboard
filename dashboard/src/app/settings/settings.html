@@ -1,1 +1,16 @@
-<p>settings works!</p>
+<div class="modal-backdrop" (click)="closeSettings()">
+  <section
+    class="settings-modal"
+    (click)="$event.stopPropagation()">
+
+    <button
+      type="button"
+      class="close-button"
+      (click)="closeSettings()">
+      ×
+    </button>
+
+    <h2>Einstellungen</h2>
+    <p>Hier sind die Einstellungen.</p>
+  </section>
+</div>

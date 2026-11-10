@@ -1,15 +1,23 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
 import { Header } from './header/header';
-import { Widget } from './widget/widget';
 import { Leftbar } from './leftbar/leftbar';
+import { Widget } from './widget/widget';
+import { Settings } from './settings/settings';
 
 @Component({
-  imports: [RouterOutlet, Leftbar, Header, Widget],
   selector: 'app-root',
-  styleUrl: './app.css',
+  imports: [Header, Leftbar, Widget, Settings],
   templateUrl: './app.html',
+  styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('dashboard');
+  showSettings = false;
+
+  openSettings(): void {
+    this.showSettings = true;
+  }
+
+  closeSettings(): void {
+    this.showSettings = false;
+  }
 }

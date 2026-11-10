@@ -1,9 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  imports: [],
   selector: 'app-settings',
-  styleUrl: './settings.css',
+  imports: [],
   templateUrl: './settings.html',
+  styleUrl: './settings.css',
 })
-export class Settings {}
+export class Settings {
+  @Output() close = new EventEmitter<void>();
+
+  closeSettings(): void {
+    this.close.emit();
+  }
+}

@@ -1,0 +1,48 @@
+:host {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.settings-modal {
+  position: relative;
+
+  width: min(90vw, 700px);
+  max-height: 85vh;
+  overflow: auto;
+
+  padding: 2rem;
+
+  color: black;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+.close-button {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+
+  width: 35px;
+  height: 35px;
+
+  border: 0;
+  border-radius: 50%;
+
+  color: white;
+  background-color: rgb(38, 54, 123);
+  font-size: 1.5rem;
+  cursor: pointer;
+}

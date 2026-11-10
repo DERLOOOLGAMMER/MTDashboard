@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-leftbar',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './leftbar.html',
   styleUrl: './leftbar.css',
 })
-export class Leftbar {}
+export class Leftbar {
+  @Output() settingsClicked = new EventEmitter<void>();
+
+  openSettings(): void {
+    this.settingsClicked.emit();
+  }
+}

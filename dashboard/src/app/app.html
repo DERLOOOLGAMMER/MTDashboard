@@ -1,9 +1,10 @@
+<app-header></app-header>
 
-<app-header> </app-header>
 <div class="dashboard-layout">
-  <app-leftbar></app-leftbar>
-
-  <main class="dashboard-content">
-    <app-widget></app-widget>
-  </main>
+  <app-leftbar (settingsClicked)="openSettings()"></app-leftbar>
+  <app-widget></app-widget>
 </div>
+
+@if (showSettings) {
+  <app-settings (close)="closeSettings()"></app-settings>
+}
