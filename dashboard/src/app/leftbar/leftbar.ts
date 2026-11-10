@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [],
   selector: 'app-leftbar',
-  styleUrl: './leftbar.css',
+  imports: [RouterLink],
   templateUrl: './leftbar.html',
+  styleUrl: './leftbar.css',
 })
 export class Leftbar {}
