@@ -1,71 +1,35 @@
-
-
 <div class="nextBdaylWidget">
-    <div class="nextBdaylWidget-heading">
-        Nächste Geburtstage
-    </div>
+  <div class="nextBdaylWidget-heading">
+    Nächste Geburtstage
+  </div>
 
-    <div class="nextBdaylWidget-birthdays">
-
-        <div class="nextBdaylWidget-birthday">
-            <div class="nextBdaylWidget-birthday-avatar">
-                MM
-            </div>
-
-            <div class="nextBdaylWidget-birthday-content">
-                <div class="nextBdaylWidget-birthday-name">
-                    Max Mustermann
-                </div>
-
-                <div class="nextBdaylWidget-birthday-date">
-                    24. März
-                </div>
-            </div>
-
-            <div class="nextBdaylWidget-birthday-icon">
-                🎂
-            </div>
+  <div class="nextBdaylWidget-birthdays">
+    @for (
+      birthday of dashboardData.birthdays();
+      track birthday.name
+    ) {
+      <div class="nextBdaylWidget-birthday">
+        <div class="nextBdaylWidget-birthday-avatar">
+          {{ birthday.initials }}
         </div>
 
-        <div class="nextBdaylWidget-birthday">
-            <div class="nextBdaylWidget-birthday-avatar">
-                EM
-            </div>
+        <div class="nextBdaylWidget-birthday-content">
+          <div class="nextBdaylWidget-birthday-name">
+            {{ birthday.name }}
+          </div>
 
-            <div class="nextBdaylWidget-birthday-content">
-                <div class="nextBdaylWidget-birthday-name">
-                    Erika Musterfrau
-                </div>
-
-                <div class="nextBdaylWidget-birthday-date">
-                    2. April
-                </div>
-            </div>
-
-            <div class="nextBdaylWidget-birthday-icon">
-                🎂
-            </div>
+          <div class="nextBdaylWidget-birthday-date">
+            {{ birthday.date }}
+          </div>
         </div>
 
-        <div class="nextBdaylWidget-birthday">
-            <div class="nextBdaylWidget-birthday-avatar">
-                LS
-            </div>
-
-            <div class="nextBdaylWidget-birthday-content">
-                <div class="nextBdaylWidget-birthday-name">
-                    Lisa Schneider
-                </div>
-
-                <div class="nextBdaylWidget-birthday-date">
-                    15. April
-                </div>
-            </div>
-
-            <div class="nextBdaylWidget-birthday-icon">
-                🎂
-            </div>
+        <div
+          class="nextBdaylWidget-birthday-icon"
+          aria-hidden="true"
+        >
+          🎂
         </div>
-
-    </div>
+      </div>
+    }
+  </div>
 </div>

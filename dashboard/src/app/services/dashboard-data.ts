@@ -20,6 +20,12 @@ export interface Contact {
   email: string;
 }
 
+export interface Birthday {
+  initials: string;
+  name: string;
+  date: string;
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -82,6 +88,24 @@ export class DashboardData {
   updateSearchTerm(value: string): void {
     this.searchTerm.set(value);
   }
+
+  birthdays = signal<Birthday[]>([
+  {
+    initials: 'MM',
+    name: 'Marten Jelitto',
+    date: '15. Aug',
+  },
+  {
+    initials: 'EM',
+    name: 'Erika Musterfrau',
+    date: '2. April',
+  },
+  {
+    initials: 'LS',
+    name: 'Lisa Schneider',
+    date: '15. April',
+  },
+]);
 
   profile = signal<UserProfile>({
     name: 'Marten Jelitto',
