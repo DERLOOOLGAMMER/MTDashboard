@@ -16,7 +16,7 @@ export interface WeatherData {
 })
 export class DashboardData {
   profile = signal<UserProfile>({
-    name: 'Tyler Bork',
+    name: 'Marten Jelitto',
     phone: '+49 1575 8804495',
     email: 'Tyler.Bork@bgv.com',
   });

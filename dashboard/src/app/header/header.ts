@@ -2,10 +2,12 @@ import {
   Component,
   OnDestroy,
   OnInit,
+  inject,
   signal,
 } from '@angular/core';
 
 import { DatePipe } from '@angular/common';
+import { DashboardData } from '../services/dashboard-data';
 
 interface WeatherResponse {
   current: {
@@ -22,9 +24,10 @@ interface WeatherResponse {
   styleUrl: './header.css',
 })
 export class Header implements OnInit, OnDestroy {
-  name = 'Max Mustermann';
+  dashboardData = inject(DashboardData);
 
   currentTime = signal(new Date());
+
   temperature = signal<number | null>(null);
   weatherText = signal('Wetter wird geladen ...');
   weatherError = signal('');
